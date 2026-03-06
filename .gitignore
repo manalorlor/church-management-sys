@@ -1,0 +1,35 @@
+# General
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+# Environment variables
+.env
+.env.*
+!.env.example
+!.env.production
+
+# Python / Django
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+venv/
+env/
+db.sqlite3
+media/
+staticfiles/
+celerybeat-schedule
+celerybeat.pid
+
+# Node / React
+node_modules/
+dist/
+dist-ssr/
+build/
+.npm/
+
+# IDE files
+*.swp
+*.swo
