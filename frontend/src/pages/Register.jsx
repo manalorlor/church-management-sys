@@ -138,7 +138,7 @@ const Register = () => {
                         </div>
                     )}
 
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} autoComplete="off">
                         {/* Name fields */}
                         <div style={{ display: 'flex', gap: 12, marginBottom: 18 }}>
                             <div style={{ flex: 1 }}>
@@ -152,10 +152,13 @@ const Register = () => {
                                         name="first_name"
                                         value={formData.first_name}
                                         onChange={handleChange}
+                                        onFocus={(e) => e.target.removeAttribute('readonly')}
+                                        onClick={(e) => e.target.removeAttribute('readonly')}
                                         className="form-input"
                                         placeholder="First"
                                         required
-                                        autoFocus
+                                        readOnly
+                                        autoComplete="new-first-name"
                                     />
                                 </div>
                             </div>
@@ -170,9 +173,13 @@ const Register = () => {
                                         name="last_name"
                                         value={formData.last_name}
                                         onChange={handleChange}
+                                        onFocus={(e) => e.target.removeAttribute('readonly')}
+                                        onClick={(e) => e.target.removeAttribute('readonly')}
                                         className="form-input"
                                         placeholder="Last"
                                         required
+                                        readOnly
+                                        autoComplete="new-last-name"
                                     />
                                 </div>
                             </div>
@@ -189,9 +196,13 @@ const Register = () => {
                                     name="email"
                                     value={formData.email}
                                     onChange={handleChange}
+                                    onFocus={(e) => e.target.removeAttribute('readonly')}
+                                    onClick={(e) => e.target.removeAttribute('readonly')}
                                     className="form-input"
                                     placeholder="Enter your email"
                                     required
+                                    readOnly
+                                    autoComplete="new-email"
                                 />
                             </div>
                         </div>
@@ -208,9 +219,13 @@ const Register = () => {
                                     name="username"
                                     value={formData.username}
                                     onChange={handleChange}
+                                    onFocus={(e) => e.target.removeAttribute('readonly')}
+                                    onClick={(e) => e.target.removeAttribute('readonly')}
                                     className="form-input"
                                     placeholder="Choose a username"
                                     required
+                                    readOnly
+                                    autoComplete="new-username"
                                 />
                             </div>
                         </div>
@@ -227,10 +242,14 @@ const Register = () => {
                                     name="password"
                                     value={formData.password}
                                     onChange={handleChange}
+                                    onFocus={(e) => e.target.removeAttribute('readonly')}
+                                    onClick={(e) => e.target.removeAttribute('readonly')}
                                     className="form-input"
                                     placeholder="Create a password"
                                     style={{ paddingRight: 44 }}
                                     required
+                                    readOnly
+                                    autoComplete="new-password"
                                 />
                                 <button
                                     type="button"

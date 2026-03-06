@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { Lock, User, Cross, Eye, EyeOff } from 'lucide-react';
@@ -219,7 +219,7 @@ const Login = () => {
                         </div>
                     )}
 
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} autoComplete="off">
                         {/* Username */}
                         <div style={{ marginBottom: 18 }}>
                             <label style={{ display: 'block', marginBottom: 6, fontSize: 13.5, fontWeight: 600, color: 'var(--text-primary)' }}>
@@ -231,10 +231,13 @@ const Login = () => {
                                     type="text"
                                     value={username}
                                     onChange={e => setUsername(e.target.value)}
+                                    onFocus={(e) => e.target.removeAttribute('readonly')}
+                                    onClick={(e) => e.target.removeAttribute('readonly')}
                                     className="form-input"
                                     placeholder="Enter username"
                                     required
-                                    autoFocus
+                                    readOnly
+                                    autoComplete="new-username"
                                 />
                             </div>
                         </div>
@@ -250,10 +253,14 @@ const Login = () => {
                                     type={showPassword ? 'text' : 'password'}
                                     value={password}
                                     onChange={e => setPassword(e.target.value)}
+                                    onFocus={(e) => e.target.removeAttribute('readonly')}
+                                    onClick={(e) => e.target.removeAttribute('readonly')}
                                     className="form-input"
                                     placeholder="Enter password"
                                     style={{ paddingRight: 44 }}
                                     required
+                                    readOnly
+                                    autoComplete="new-password"
                                 />
                                 <button
                                     type="button"
